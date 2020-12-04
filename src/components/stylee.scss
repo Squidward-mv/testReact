@@ -1,0 +1,100 @@
+.trash {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Monospace;
+  font-size: 18px;
+  font-weight: 300;
+
+  background: #7ab899;
+  color: rgb(48, 121, 84);
+
+  font-size: 45px;
+}
+
+* {
+  user-select: none;
+
+  &:focus {
+      outline: none;
+  }
+}
+
+
+.wrapper {
+  padding: 16px 32px 32px;
+
+  background: #282A36;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px #282A36aa;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .decimal {
+      width: 3em;
+      text-align: center;
+      color: #eee;
+  }
+
+  button {
+      background: transparent;
+      color: #aaa;
+      font-size: 1em;
+      border: none;
+      padding: 0;
+      margin-bottom: 10px;
+      cursor: pointer;
+      &:hover {
+          filter: brightness(1.5);
+      }
+  }
+}
+
+.counter {
+  background: #44B87E55;
+  display: flex;
+  overflow: hidden;
+
+  div {
+      position: relative;
+      text-align: center;
+      border: 1px solid #444444;
+      background: linear-gradient(0deg, #111, #333, #111);
+      cursor: pointer;
+
+      &:hover {
+          filter: brightness(1.2);
+      }
+  }
+
+  div::before {
+      content: "0";
+      transition: all 300ms ease-in-out;
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+
+  div::after {
+      content: "1";
+      transition: all 300ms ease-in-out;
+      position: absolute;
+      left: 0;
+      top: -1em;
+  }
+
+  .one {
+      &::before {
+          top: 1em;
+      }
+
+      &::after {
+          top: 0em;
+      }
+  }
+}
